@@ -27,7 +27,7 @@ jobs:
           
 
           - platform: ds918p
-            version: 25556
+            version: 6.2.4-25556
 
     steps:
       - name: 检出项目文件
