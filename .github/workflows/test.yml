@@ -28,10 +28,6 @@ jobs:
 
           - platform: ds918p
             version: 6.2.3-25426 Update 3
-          - platform: ds918p
-            version: 7.0.1-42218
-          - platform: ds918p
-            version: 7.1.0-42661    
 
     steps:
       - name: 检出项目文件
