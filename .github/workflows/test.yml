@@ -74,7 +74,7 @@ jobs:
           cat ${{matrix.platform}}_user_config.json
 
       - name: 添加扩展驱动
-        if: matrix.platform != 'ds918p'
+        if: matrix.platform == 'ds918p'
         run: |
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-boot-wait.json
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-acpid.json
@@ -100,7 +100,7 @@ jobs:
           echo 'see https://github.com/jumkey/redpill-load/blob/develop/redpill-dtb/README.md'
 
       - name: 预处理PAT
-        if: endsWith(matrix.version, '42661') && startsWith(matrix.platform, 'ds918p')
+        if: endsWith(matrix.version, '6.2.4-25556') && startsWith(matrix.platform, 'ds918p')
         run: |
           sed -i 's/debian:8-slim/debian:10-slim/g' global_config.json
           ./redpill_tool_chain.sh build ${{matrix.platform}}-${{matrix.version}}
